@@ -33,9 +33,9 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void getKittensTest() {
+    public void getKittensTest() throws Exception {
         int expectedKittensCount = 1;
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(sex,feline);
         Mockito.when(feline.getKittens()).thenReturn(expectedKittensCount);
         int actualKittensCount = lion.getKittens();
         assertEquals(expectedKittensCount, actualKittensCount);
@@ -51,7 +51,7 @@ public class LionTest {
 
     @Test
     public void getSexTest() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex,feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected,actual);
 
